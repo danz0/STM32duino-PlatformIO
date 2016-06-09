@@ -1,0 +1,15 @@
+{
+    "cid": "a34ed36e-7e36-5816-8473-5b32c99a58da", 
+    "last_version": "2.9.4", 
+    "telemetry": {"backup": []}, "last_check": {"platformio_upgrade": 1465466151, "platforms_update": 1465466152, "libraries_update": 1465466155}, 
+    "installed_platforms": ["stm32duino", "atmelsam"], 
+    "installed_packages": {
+        "toolchain-gccarmnoneeabi": {"version": 2, "time": 1465466149}, 
+        "tool-openocd": {"version": 1, "time": 1465469718}, 
+        "framework-arduinosam": {"version": 15, "time": 1465466499}, 
+        "framework-stm32duino": {"version": 15, "time": 1465466499},  
+        "tool-scons": {"version": 1, "time": 1465466508}, 
+        "ldscripts": {"version": 21, "time": 1465466151}, 
+        "tool-bossac": {"version": 2, "time": 1465469719}
+    }
+}
