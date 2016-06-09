@@ -1,0 +1,102 @@
+{
+    "f103r8": {
+        "build": {
+            "core": "maple",
+            "extra_flags": "-DMCU_STM32F103R8 -DBOARD_generic_stm32f103r8 -DVECT_TAB_ADDR=0x8000000 -DERROR_LED_PORT=GPIOB -DERROR_LED_PIN=1 -DARDUINO_GENERIC_STM32F103R  -DARDUINO_ARCH_STM32F1",
+            "f_cpu": "72000000L",
+            "mcu": "stm32f103r8",
+            "cpu": "cortex-m3",
+            "variant": "generic_stm32f103r8",
+            "ldscript": "stm32f103r8.ld",
+            "hwid": [
+              ["0x1EAF", "0x0004"]
+            ]
+        },
+        "frameworks": ["stm32duino"],
+        "name": "STM32F103R8 (20k RAM. 64k Flash)",
+        "platform": "stm32duino",
+        "upload": {
+            "maximum_ram_size": 20480,
+            "maximum_size": 65536,
+            "protocol": "maple_serial",
+            "require_upload_port" : true
+        },
+        "url": "http://www.stm32duino.com/",
+        "vendor": "STM32duino"
+    },
+    "f103rb": {
+        "build": {
+            "core": "maple",
+            "extra_flags": "-DMCU_STM32F103RB -DBOARD_generic_stm32f103r8 -DVECT_TAB_ADDR=0x8000000 -DERROR_LED_PORT=GPIOB -DERROR_LED_PIN=1 -DARDUINO_GENERIC_STM32F103R -DARDUINO_ARCH_STM32F1",
+            "f_cpu": "72000000L",
+            "mcu": "stm32f103rb",
+            "cpu": "cortex-m3",
+            "variant": "generic_stm32f103r8",
+            "ldscript": "stm32f103rb.ld",
+            "hwid": [
+              ["0x1EAF", "0x0004"]
+            ]
+        },
+        "frameworks": ["stm32duino"],
+        "name": "STM32F103RB (20k RAM. 128k Flash)",
+        "platform": "stm32duino",
+        "upload": {
+            "maximum_ram_size": 20480,
+            "maximum_size": 131072,
+            "protocol": "maple_serial",
+            "require_upload_port" : true
+        },
+        "url": "http://www.stm32duino.com/",
+        "vendor": "STM32duino"
+    },
+    "f103rc": {
+        "build": {
+            "core": "maple",
+            "extra_flags": "-DMCU_STM32F103RC -DBOARD_generic_stm32f103r8 -DVECT_TAB_ADDR=0x8000000 -DERROR_LED_PORT=GPIOB -DERROR_LED_PIN=1 -DARDUINO_GENERIC_STM32F103R -DARDUINO_ARCH_STM32F1",
+            "f_cpu": "72000000L",
+            "mcu": "stm32f103rc",
+            "cpu": "cortex-m3",
+            "variant": "generic_stm32f103r",
+            "ldscript": "stm32f103rc.ld",
+            "hwid": [
+              ["0x1EAF", "0x0004"]
+            ]
+        },
+        "frameworks": ["stm32duino"],
+        "name": "STM32F103RC (48k RAM. 256k Flash)",
+        "platform": "stm32duino",
+        "upload": {
+            "maximum_ram_size": 49152,
+            "maximum_size": 262144,
+            "protocol": "maple_serial",
+            "require_upload_port" : true
+        },
+        "url": "http://www.stm32duino.com/",
+        "vendor": "STM32duino"
+    },
+    "f103re": {
+        "build": {
+            "core": "maple",
+            "extra_flags": "-DMCU_STM32F103RE -DBOARD_generic_stm32f103r8 -DVECT_TAB_ADDR=0x8000000 -DERROR_LED_PORT=GPIOB -DERROR_LED_PIN=1 -DARDUINO_GENERIC_STM32F103R -DARDUINO_ARCH_STM32F1",
+            "f_cpu": "72000000L",
+            "mcu": "stm32f103re",
+            "cpu": "cortex-m3",
+            "variant": "generic_stm32f103r",
+            "ldscript": "stm32f103re.ld",
+            "hwid": [
+              ["0x1EAF", "0x0004"]
+            ]
+        },
+        "frameworks": ["stm32duino"],
+        "name": "STM32F103RE (64k RAM. 512k Flash)",
+        "platform": "stm32duino",
+        "upload": {
+            "maximum_ram_size": 65536,
+            "maximum_size": 524288,
+            "protocol": "maple_serial",
+            "require_upload_port" : true
+        },
+        "url": "http://www.stm32duino.com/",
+        "vendor": "STM32duino"
+    }
+}

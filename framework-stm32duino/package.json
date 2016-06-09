@@ -1,0 +1,7 @@
+{
+    "description":"STM32duino Framework",
+    "name":"framework-stm32duino",
+    "system":"all",
+    "url":"http://www.stm32duino.com",
+    "version":"1.10609.0"
+}
