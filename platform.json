@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://github.com/ubis/STM32duino-Framework.git"
   },
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageRepositories": [
     "https://github.com/ubis/STM32duino-PlatformIO/releases/download/0.01/manifest.json",
     "https://dl.bintray.com/platformio/dl-packages/manifest.json",
@@ -36,7 +36,6 @@
     },
     "framework-stm32duino": {
       "type": "framework",
-      "optional": true,
       "version": "~1.10609.0"
     },
     "tool-openocd": {

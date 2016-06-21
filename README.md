@@ -3,6 +3,7 @@ STM32duino Framework for **PlatformIO 3.0**
 
 Currently supported devices: 
 * STM32F103Rx(R8, RB, RC, RE)
+* STM32F103Cx(C8, CB)
 
 Device flashing: **Windows: serial only**
 
@@ -20,5 +21,5 @@ Open terminal and write:
 ##### **Notes:** 
 * This installation is for official PlatformIO IDE: Atom. 
 * _UserFolder_ is **%HOMEPATH%** on Windows or just C:\Users\Username...
-* __BOARD_NAME__ can be f103r, f103rb, f103rc, f103re.
+* __BOARD_NAME__ can be f103r, f103rb, f103rc, f103re, f103c8, f103cb.
 * PlatformIO 3.0 with Atom currently have a bug while trying to create new project, instead use command line initialization.
