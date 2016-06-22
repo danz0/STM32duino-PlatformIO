@@ -20,6 +20,6 @@ Open terminal and write:
 * platformio run
 
 ##### **Notes:** 
-* This installation is PlatformIO 3.0.
+* This installation is for PlatformIO 3.0.
 * __BOARD_NAME__ can be f103r, f103rb, f103rc, f103re, f103c8, f103cb.
 * PlatformIO 3.0 with Atom currently have a bug while trying to create new project, instead use command line initialization.
