@@ -5,7 +5,7 @@ Currently supported devices:
 * STM32F103Rx(R8, RB, RC, RE)
 * STM32F103Cx(C8, CB)
 
-Device flashing: **Windows: serial only**
+Device flashing: **serial only**
 
 #### Quick installation:
 * Install PlatformIO CLI (or IDE, it will have CLI);
@@ -22,4 +22,4 @@ Open terminal and write:
 ##### **Notes:** 
 * This installation is for PlatformIO 3.0.
 * __BOARD_NAME__ can be f103r, f103rb, f103rc, f103re, f103c8, f103cb.
-* PlatformIO 3.0 with Atom currently have a bug while trying to create new project, instead use command line initialization.
+* PlatformIO 3.0 with Atom on Windows, currently have a bug while trying to create new project, instead use command line initialization.

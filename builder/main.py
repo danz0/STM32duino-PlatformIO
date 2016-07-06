@@ -144,10 +144,20 @@ env.Append(
     )
 )
 
+uploadPlatform = "none"
+
+from sys import platform as _platform
+if _platform == "linux" or _platform == "linux2":
+    uploadPlatform = "linux"
+elif _platform == "darwin":
+    uploadPlatform = "macosx"
+elif _platform == "win32":
+    uploadPlatform = "win"
+
 env.Replace(
-    UPLOADER=join(env.DevPlatform().get_package_dir("framework-stm32duino"), "tools", "win", "serial_upload"), 
+    UPLOADER=join(env.DevPlatform().get_package_dir("framework-stm32duino"), "tools", uploadPlatform, "serial_upload"), 
     UPLOADERFLAGS=["$UPLOAD_PORT"],
-    UPLOADCMD='$UPLOADER $UPLOAD_PORT {upload.altID} {upload.usbID} $PROJECT_DIR\$SOURCES'
+    UPLOADCMD='$UPLOADER $UPLOAD_PORT {upload.altID} {upload.usbID} $PROJECT_DIR/$SOURCES'
 )
 
 #
