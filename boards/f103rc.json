@@ -19,7 +19,7 @@
     "require_upload_port": true, 
     "use_1200bps_touch": false, 
     "wait_for_upload_port": false,
-    "usbid": ["0x1EAF", "0x0003"]
+    "usbid": ["1EAF", "0003"]
   }, 
   "url": "http://www.stm32duino.com", 
   "vendor": "STM32duino"

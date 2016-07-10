@@ -41,6 +41,9 @@ def BeforeUpload(target, source, env):  # pylint: disable=W0613,W0621
     if upload_options.get("wait_for_upload_port", False):
         env.Replace(UPLOAD_PORT=env.WaitForNewSerialPort(before_ports))
 
+    if "/" in env.subst("$UPLOAD_PORT"):
+        env.Replace(UPLOAD_PORT=basename(env.subst("$UPLOAD_PORT")))
+
 
 env = DefaultEnvironment()
 
