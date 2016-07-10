@@ -23,7 +23,6 @@ from SCons.Script import (COMMAND_LINE_TARGETS, AlwaysBuild, Builder, Default,
 
 from platformio.util import get_serialports
 
-
 def BeforeUpload(target, source, env):  # pylint: disable=W0613,W0621
     env.AutodetectUploadPort()
 
@@ -41,10 +40,6 @@ def BeforeUpload(target, source, env):  # pylint: disable=W0613,W0621
 
     if upload_options.get("wait_for_upload_port", False):
         env.Replace(UPLOAD_PORT=env.WaitForNewSerialPort(before_ports))
-
-    # use only port name for BOSSA
-    if "/" in env.subst("$UPLOAD_PORT"):
-        env.Replace(UPLOAD_PORT=basename(env.subst("$UPLOAD_PORT")))
 
 
 env = DefaultEnvironment()
@@ -107,6 +102,11 @@ env.Replace(
     PROGSUFFIX=".elf"
 )
 
+if env.subst("$UPLOAD_PROTOCOL") == "dfu":
+    env.Append(CCFLAGS=["-DSERIAL_USB", "-DDGENERIC_BOOTLOADER", "-DVECT_TAB_ADDR=0x8002000"])
+else:
+    env.Append(CCFLAGS=["-DVECT_TAB_ADDR=0x8000000"])
+
 if "BOARD" in env:
     env.Append(
         CCFLAGS=[
@@ -145,6 +145,8 @@ env.Append(
 )
 
 uploadPlatform = "none"
+uploadProtocol = "serial_upload"
+uploadParams = "{upload.altID} {upload.usbID} $PROJECT_DIR/$SOURCES"
 
 from sys import platform as _platform
 if _platform == "linux" or _platform == "linux2":
@@ -153,11 +155,19 @@ elif _platform == "darwin":
     uploadPlatform = "macosx"
 elif _platform == "win32":
     uploadPlatform = "win"
+ 
+if env.subst("$UPLOAD_PROTOCOL") == "dfu":
+    uploadProtocol = "maple_upload"
+    usbids = env.BoardConfig().get("upload.usbid", "")
+    usbid = '%s:%s' % (usbids[0], usbids[1])
+    env.Replace(UPLOADERFLAGS=usbid)
+    uploadParams = usbid
 
 env.Replace(
-    UPLOADER=join(env.DevPlatform().get_package_dir("framework-stm32duino"), "tools", uploadPlatform, "serial_upload"), 
+    UPLOADER=join(env.DevPlatform().get_package_dir("framework-stm32duino"), "tools", uploadPlatform, uploadProtocol), 
     UPLOADERFLAGS=["$UPLOAD_PORT"],
-    UPLOADCMD='$UPLOADER $UPLOAD_PORT {upload.altID} {upload.usbID} $PROJECT_DIR/$SOURCES'
+    UPLOADERPARAMS=uploadParams,
+    UPLOADCMD='$UPLOADER $UPLOADERFLAGS $UPLOADERPARAMS $PROJECT_DIR/$SOURCES'
 )
 
 #

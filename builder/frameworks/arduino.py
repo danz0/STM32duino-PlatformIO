@@ -57,6 +57,15 @@ env.Append(
     ]
 )
 
+ldScript = env.BoardConfig().get("build.ldscript")
+
+if env.subst("$UPLOAD_PROTOCOL") == "dfu":
+    if "stm32f103c" in env.BoardConfig().get("build.mcu", ""):
+        ldScript = "bootloader_20.ld"
+    elif "stm32f103r" in env.BoardConfig().get("build.mcu", ""):
+        ldScript = "bootloader.ld"
+    env.Replace(LDSCRIPT_PATH=ldScript)
+
 env.VariantDirWrap(
     join("$BUILD_DIR", "FrameworkArduinoInc"),
     join(FRAMEWORK_DIR, "cores", env.BoardConfig().get("build.core"))

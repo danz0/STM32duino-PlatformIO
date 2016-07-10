@@ -2,7 +2,7 @@
   "build": {
     "core": "maple", 
     "cpu": "cortex-m3", 
-    "extra_flags": "-DMCU_STM32F103RB -DBOARD_generic_stm32f103r8 -DVECT_TAB_ADDR=0x8000000 -DERROR_LED_PORT=GPIOB -DERROR_LED_PIN=1 -DARDUINO_GENERIC_STM32F103R -DARDUINO_ARCH_STM32F1", 
+    "extra_flags": "-DMCU_STM32F103RB -DBOARD_generic_stm32f103r8 -DERROR_LED_PORT=GPIOB -DERROR_LED_PIN=1 -DARDUINO_GENERIC_STM32F103R -DARDUINO_ARCH_STM32F1", 
     "f_cpu": "72000000L", 
     "hwids": [["0x1EAF", "0x0004"]], 
     "ldscript": "stm32f103rb.ld", 
@@ -18,7 +18,8 @@
     "protocol": "maple_serial", 
     "require_upload_port": true, 
     "use_1200bps_touch": false, 
-    "wait_for_upload_port": false
+    "wait_for_upload_port": false,
+    "usbid": ["0x1EAF", "0x0003"]
   }, 
   "url": "http://www.stm32duino.com", 
   "vendor": "STM32duino"
